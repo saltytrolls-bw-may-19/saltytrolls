@@ -98,3 +98,21 @@ Used for a quick authentication check - will simply always return a success mess
 #### Failure Outputs:
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+## DELETE /api/users/:id
+
+#### Overview
+
+Used to delete the current user.
+
+#### Inputs:
+
+* **Request header (Javascript object)** that should contain the token _(security is added for tokens that do not correspond to the current user being requested for deletion - **status 403 (Forbidden)** will be returned if this is attempted)_
+
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
