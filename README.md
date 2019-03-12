@@ -39,7 +39,7 @@ REACT_APP_ROOT_URL=netlify.com/yadayada/  url = process.env.REACT_APP_ROOT_URL/b
 ## Backend Details
 https://buildweek-saltytrolls.herokuapp.com/
 
-## POST /api/saltytrolls/register
+## POST /api/users/register
 
 #### Overview
 
@@ -59,7 +59,7 @@ Used to register a user and ensure that user information will be saved in the se
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## POST /api/saltytrolls/login
+## POST /api/users/login
 
 #### Overview
 
@@ -81,7 +81,7 @@ Used to log in and get authentication for accessing the main functionalities of 
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## GET /api/saltytrolls/auth
+## GET /api/users/auth
 
 #### Overview
 
