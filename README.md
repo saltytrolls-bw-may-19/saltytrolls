@@ -142,3 +142,35 @@ Used to update the current user's password.
 #### Failure Outputs:
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+## `GET /api/hackers/:id` (currently WIP - will return sample data)
+
+#### Overview
+
+Used to obtain an individual hacker's (Hacker News user) sentiment score, along with their username and comment count.
+
+#### No inputs needed
+
+#### Outputs
+
+Will always return a sample **Javascript object** with the following fields:
+* `HackerUsername` (string)
+* `HackerSentiment` (number - _decimal_)
+* `HackerCommentCount` (number - _integer_)
+
+## `GET /api/hackers/:id/details` (currently WIP - will return sample data)
+
+#### Overview
+
+Returns the top 10 saltiest comments.
+
+#### No inputs needed
+
+#### Outputs
+
+Will always return a sample **array of Javascript objects** with the following fields:
+* `author` (string)
+* `sentiment` (number - _decimal_)
+* `ranking` (number - _integer_)
+* `time` (number - _numerical representation of time_)
+* `text` (string)
