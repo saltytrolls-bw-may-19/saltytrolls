@@ -35,3 +35,7 @@ PORT=4000
 
 ### REACT_ENVIRONMENT
 REACT_APP_ROOT_URL=netlify.com/yadayada/  url = process.env.REACT_APP_ROOT_URL/bridges/
+
+## Backend Details
+https://buildweek-saltytrolls.herokuapp.com/
+
