@@ -116,3 +116,23 @@ Used to delete the current user.
 #### Failure Outputs:
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+## PATCH /api/users/:id/password
+
+#### Overview
+
+Used to update the current user's password.
+
+#### Inputs:
+
+* **Request header (Javascript object)** that should contain the token _(security is added for tokens that do not correspond to the current user being requested for a password update - **status 403 (Forbidden)** will be returned if this is attempted)_
+* **Javascript object** with the following fields:
+	- `UserPassword` (string)
+
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
