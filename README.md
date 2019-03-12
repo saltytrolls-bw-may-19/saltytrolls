@@ -127,7 +127,7 @@ Used to update the current user's password.
 
 * **Request header (Javascript object)** that should contain the token _(security is added for tokens that do not correspond to the current user being requested for a password update - **status 403 (Forbidden)** will be returned if this is attempted)_
 * **Javascript object** with the following fields:
-	- `UserPassword` (string)
+	- `UserPassword` (string) -> _this will be hashed_
 
 #### Success Outputs:
 
