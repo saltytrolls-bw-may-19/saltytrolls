@@ -83,6 +83,8 @@ Used to log in and get authentication for accessing the main functionalities of 
 
 ## GET /api/users/auth
 
+**This endpoint is restricted to logged in users.**
+
 #### Overview
 
 Used for a quick authentication check - will simply always return a success messsage on success, and fail **(with status 401)** if token is either unsupplied or invalid.
@@ -100,6 +102,8 @@ Used for a quick authentication check - will simply always return a success mess
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
 ## DELETE /api/users/:id
+
+**This endpoint is restricted to logged in users.**
 
 #### Overview
 
@@ -119,15 +123,17 @@ Used to delete the current user.
 
 ## PATCH /api/users/:id/password
 
+**This endpoint is restricted to logged in users.**
+
 #### Overview
 
 Used to update the current user's password.
 
 #### Inputs:
 
-* **Request header (Javascript object)** that should contain the token _(security is in place for tokens that do not correspond to the current user being requested for a password update - **status 403 (Forbidden)** will be returned if this is attempted)_
 * **Javascript object** with the following fields:
 	- `UserPassword` (string) -> _this will be hashed_
+* **Request header (Javascript object)** that should contain the token _(security is in place for tokens that do not correspond to the current user being requested for a password update - **status 403 (Forbidden)** will be returned if this is attempted)_
 
 #### Success Outputs:
 
