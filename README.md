@@ -107,7 +107,7 @@ Used to delete the current user.
 
 #### Inputs:
 
-* **Request header (Javascript object)** that should contain the token _(security is added for tokens that do not correspond to the current user being requested for deletion - **status 403 (Forbidden)** will be returned if this is attempted)_
+* **Request header (Javascript object)** that should contain the token _(security is in place for tokens that do not correspond to the current user being requested for deletion - **status 403 (Forbidden)** will be returned if this is attempted)_
 
 #### Success Outputs:
 
@@ -125,7 +125,7 @@ Used to update the current user's password.
 
 #### Inputs:
 
-* **Request header (Javascript object)** that should contain the token _(security is added for tokens that do not correspond to the current user being requested for a password update - **status 403 (Forbidden)** will be returned if this is attempted)_
+* **Request header (Javascript object)** that should contain the token _(security is in place for tokens that do not correspond to the current user being requested for a password update - **status 403 (Forbidden)** will be returned if this is attempted)_
 * **Javascript object** with the following fields:
 	- `UserPassword` (string) -> _this will be hashed_
 
