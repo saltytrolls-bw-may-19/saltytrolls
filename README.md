@@ -21,3 +21,80 @@ MVP: App rates and ranks hacker news commenters by negativity of comment sentime
 Stretch Goal: App also displays the sentiment of individual comments by user allowing drilldown to a user view.
 
 Dataset: https://www.kaggle.com/hacker-news/hacker-news
+
+## ENVIRONMENT_VARIABLES
+
+Here is where I would like each teams required environment variables stored. Since we all work on this file, I want you to clone it. Then right before you add a variable it want you to run `get pull` in this repo, to make sure you are not deleting eachothers on your local machine. Then add the variable you need, `git commit` and `git push` right away. These will go directly to master
+
+If the environment variable is something private just enter the `NAME=` and then include a link on the next line where the user can sign up for that key. Remember to keep all secrets secret.
+
+### AI_ENVIRONMENT
+
+### BACKEND_ENVIRONMENT
+PORT=4000
+
+### REACT_ENVIRONMENT
+REACT_APP_ROOT_URL=netlify.com/yadayada/  url = process.env.REACT_APP_ROOT_URL/bridges/
+
+## Backend Details
+https://buildweek-saltytrolls.herokuapp.com/
+
+## POST /api/saltytrolls/register
+
+#### Overview
+
+Used to register a user and ensure that user information will be saved in the server.
+
+#### Inputs:
+
+* **Javascript object** with the following fields:
+	- `UserEmail` (string) -> _it is assumed that only validated email addresses will be sent_
+	- `UserPassword` (string) -> _this will be hashed_
+  
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+## POST /api/saltytrolls/login
+
+#### Overview
+
+Used to log in and get authentication for accessing the main functionalities of the React app.
+
+#### Inputs:
+
+* **Javascript object** with the following fields:
+	- `UserEmail` (string)
+	- `UserPassword` (string)
+
+#### Success Outputs:
+
+* `UserID` (string) -> _the ID of the logged in user_
+* `UserEmail` (string) -> _the email address of the logged in user_
+* `token` (string) -> _token string that should be used for accessing restricted endpoints_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+## GET /api/saltytrolls/auth
+
+#### Overview
+
+Used for a quick authentication check - will simply always return a success messsage on success, and fail **(with status 401)** if token is either unsupplied or invalid.
+
+#### Inputs:
+
+* **Request header (Javascript object)** that should contain the token
+
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
