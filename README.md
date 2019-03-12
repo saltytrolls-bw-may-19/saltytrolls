@@ -31,6 +31,7 @@ If the environment variable is something private just enter the `NAME=` and then
 ### AI_ENVIRONMENT
 
 ### BACKEND_ENVIRONMENT
+PORT=4000
 
 ### REACT_ENVIRONMENT
-REACT_APP_ROOT_URL=netlify.com/yadayada/
+REACT_APP_ROOT_URL=netlify.com/yadayada/  url = process.env.REACT_APP_ROOT_URL/bridges/
