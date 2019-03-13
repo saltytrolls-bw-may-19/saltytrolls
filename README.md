@@ -39,7 +39,8 @@ REACT_APP_ROOT_URL=netlify.com/yadayada/  url = process.env.REACT_APP_ROOT_URL/b
 ## Backend Details
 https://buildweek-saltytrolls.herokuapp.com/
 
-## `POST /api/users/register`
+
+### `POST /api/users/register`
 
 #### Overview
 
@@ -59,7 +60,7 @@ Used to register a user and ensure that user information will be saved in the se
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## `POST /api/users/login`
+### `POST /api/users/login`
 
 #### Overview
 
@@ -81,7 +82,7 @@ Used to log in and get authentication for accessing the main functionalities of 
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## `GET /api/users/auth`
+### `GET /api/users/auth`
 
 **This endpoint is restricted to logged in users.**
 
@@ -101,7 +102,7 @@ Used for a quick authentication check - will simply always return a success mess
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## `DELETE /api/users/:id`
+### `DELETE /api/users/:id`
 
 **This endpoint is restricted to logged in users.**
 
@@ -121,7 +122,7 @@ Used to delete the current user.
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## `PATCH /api/users/:id/password`
+### `PATCH /api/users/:id/password`
 
 **This endpoint is restricted to logged in users.**
 
@@ -143,7 +144,7 @@ Used to update the current user's password.
 
 * `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
 
-## `GET /api/hackers/:id` (currently WIP - will return sample data)
+### `GET /api/hackers/:id` (currently WIP - will return sample data)
 
 #### Overview
 
@@ -158,7 +159,7 @@ Will always return a sample **Javascript object** with the following fields:
 * `HackerSentiment` (number - _decimal_)
 * `HackerCommentCount` (number - _integer_)
 
-## `GET /api/hackers/:id/details` (currently WIP - will return sample data)
+### `GET /api/hackers/:id/details` (currently WIP - will return sample data)
 
 #### Overview
 
@@ -174,3 +175,5 @@ Will always return a sample **array of Javascript objects** with the following f
 * `ranking` (number - _integer_)
 * `time` (number - _numerical representation of time_)
 * `text` (string)
+=======
+
