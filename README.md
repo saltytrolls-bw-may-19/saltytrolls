@@ -39,3 +39,141 @@ REACT_APP_ROOT_URL=netlify.com/yadayada/  url = process.env.REACT_APP_ROOT_URL/b
 ## Backend Details
 https://buildweek-saltytrolls.herokuapp.com/
 
+
+### `POST /api/users/register`
+
+#### Overview
+
+Used to register a user and ensure that user information will be saved in the server.
+
+#### Inputs:
+
+* **Javascript object** with the following fields:
+	- `UserEmail` (string) -> _it is assumed that only validated email addresses will be sent_
+	- `UserPassword` (string) -> _this will be hashed_
+  
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+### `POST /api/users/login`
+
+#### Overview
+
+Used to log in and get authentication for accessing the main functionalities of the React app.
+
+#### Inputs:
+
+* **Javascript object** with the following fields:
+	- `UserEmail` (string)
+	- `UserPassword` (string)
+
+#### Success Outputs:
+
+* `UserID` (string) -> _the ID of the logged in user_
+* `UserEmail` (string) -> _the email address of the logged in user_
+* `token` (string) -> _token string that should be used for accessing restricted endpoints_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+### `GET /api/users/auth`
+
+**This endpoint is restricted to logged in users.**
+
+#### Overview
+
+Used for a quick authentication check - will simply always return a success messsage on success, and fail **(with status `401`)** if token is either unsupplied or invalid.
+
+#### Inputs:
+
+* **Request header (Javascript object)** that should contain the token
+
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+### `DELETE /api/users/:id`
+
+**This endpoint is restricted to logged in users.**
+
+#### Overview
+
+Used to delete the current user.
+
+#### Inputs:
+
+* **Request header (Javascript object)** that should contain the token _(security is in place for tokens that do not correspond to the current user being requested for deletion - **status `403` (Forbidden)** will be returned if this is attempted)_
+
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+### `PATCH /api/users/:id/password`
+
+**This endpoint is restricted to logged in users.**
+
+#### Overview
+
+Used to update the current user's password.
+
+#### Inputs:
+
+* **Javascript object** with the following fields:
+	- `UserPassword` (string) -> _this will be hashed_
+* **Request header (Javascript object)** that should contain the token _(security is in place for tokens that do not correspond to the current user being requested for a password update - **status `403` (Forbidden)** will be returned if this is attempted)_
+
+#### Success Outputs:
+
+* `msg` (string) -> _contains a success message string_
+
+#### Failure Outputs:
+
+* `msg` (string) -> _contains an error object converted into a string for greater clarity in debugging_
+
+### `GET /api/hackers/:id` (currently WIP - will return sample data)
+
+#### Overview
+
+Used to obtain an individual hacker's (Hacker News user) sentiment score, along with their username and comment count.
+
+#### No inputs needed
+
+#### Outputs
+
+Will always return a sample **Javascript object** with the following fields:
+* `HackerUsername` (string)
+* `HackerSentiment` (number - _decimal_)
+* `HackerCommentCount` (number - _integer_)
+
+### `GET /api/hackers/:id/details` (currently WIP - will return sample data)
+
+#### Overview
+
+Returns the top 10 saltiest comments.
+
+#### No inputs needed
+
+#### Outputs
+
+Will always return a sample **array of Javascript objects** with the following fields:
+* `author` (string)
+* `sentiment` (number - _decimal_)
+* `ranking` (number - _integer_)
+* `time` (number - _numerical representation of time_)
+* `text` (string)
+=======
+
