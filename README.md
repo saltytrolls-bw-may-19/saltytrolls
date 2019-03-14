@@ -2,8 +2,11 @@
 
 ## Current Links
 Authentication backend https://buildweek-saltytrolls.herokuapp.com/
+
 Datascience backend http://kevinbrack.com:1337
+
 UI landing page https://competent-wilson-ba0397.netlify.com/index.html
+
 React app https://festive-ardinghelli-9da698.netlify.com/
 
 ## GitHub flow
